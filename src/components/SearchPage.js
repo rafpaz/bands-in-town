@@ -7,7 +7,7 @@ class SearchPage extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            gifsData: {},
+            apiData: {},
             showResults: false,
             searchQuery: this.props.match.params.query,
         };
@@ -40,14 +40,16 @@ class SearchPage extends Component {
 
     onSearch() {
         this.setState({
-            gifsData: {},
+            apiData: {},
         });
         bandsAPI.search(this.state.searchQuery)
             .then(data => {
-                this.setState({
-                    gifsData: data,
-                    showResults: true,
-                });
+                if (data){
+                    this.setState({
+                        apiData: data,
+                        showResults: true,
+                    });
+                }
             });
     }
 
@@ -59,8 +61,8 @@ class SearchPage extends Component {
                 />
                 {this.state.showResults &&
                 <Results
-                    resultData={this.state.gifsData}
-                    searchQuery={this.state.searchQuery}
+                    bandData={this.state.apiData.bandData}
+                    eventsData={this.state.apiData.eventsData}
                 />
                 }
             </div>

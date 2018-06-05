@@ -24,10 +24,25 @@ html, body{
     }
   }
 
-  .results{
-    li{
-      display: block;
-      margin-bottom: 5px;
+  #results{
+    h2{
+      margin-top: 40px;
+    }
+    #facebook-page{
+      margin-top: 15px;
+      a {
+        font-size: 16px;
+        margin-top: 1px;
+      }
+    }
+    .eventCard{
+      margin: 0 0 20px 20px;
+    }
+    .eventCard:nth-child(1n){
+      background-color: #97bee1;
+    }
+    .eventCard:nth-child(2n){
+      background-color: #c5e4ff;
     }
   }
 

@@ -33,7 +33,7 @@ class Search extends Component {
         return (
             <div className="container" id={"search-container"}>
                 <div className="row justify-content-md-center">
-                    <div className="input-group mb-3 mt-3 col-5">
+                    <div className="input-group mb-3 mt-3 col-sm-5 col-12">
                         <input type="text"
                                className="form-control"
                                placeholder="Search for a band"
@@ -51,6 +51,7 @@ class Search extends Component {
                                         className="btn btn-outline-secondary"
                                         type="button"
                                 >
+                                    {/*<i className="fa fa-search"/>*/}
                                     <i className="material-icons">search</i>
                                 </button>
                             </Link>

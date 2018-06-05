@@ -16,9 +16,19 @@ html, body {
     margin: 35px auto 10px auto; }
   #app #search-container .input-group, #app #search-container button {
     height: 38px; }
-  #app .results li {
-    display: block;
-    margin-bottom: 5px; }
+  #app #results h2 {
+    margin-top: 40px; }
+  #app #results #facebook-page {
+    margin-top: 15px; }
+    #app #results #facebook-page a {
+      font-size: 16px;
+      margin-top: 1px; }
+  #app #results .eventCard {
+    margin: 0 0 20px 20px; }
+  #app #results .eventCard:nth-child(1n) {
+    background-color: #97bee1; }
+  #app #results .eventCard:nth-child(2n) {
+    background-color: #c5e4ff; }
   #app #navigation-btns {
     width: 140px;
     margin: 0 auto; }
