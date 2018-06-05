@@ -37,22 +37,6 @@ class Results extends Component {
                     >
                         {childElements}
                     </Masonry>
-                    <div id={"navigation-btns"}>
-                        {this.props.prevPos !== -1 &&
-                            <Link to={"/search/" + this.props.searchQuery + "/" + this.props.limit + "/" + this.props.prevPos}>
-                                <button type="button" className="btn btn-secondary"><i
-                                    className="material-icons">navigate_before</i>
-                                </button>
-                            </Link>
-                        }
-                        {this.props.nextPos !== -1 &&
-                        <Link to={"/search/" + this.props.searchQuery + "/" + this.props.limit + "/" + this.props.nextPos}>
-                            <button type="button" className="btn btn-secondary"><i
-                                className="material-icons">navigate_next</i>
-                            </button>
-                        </Link>
-                        }
-                    </div>
                 </div>
                 }
 
@@ -63,10 +47,7 @@ class Results extends Component {
 
 Results.propTypes = {
     resultData: PropTypes.object,
-    nextPos: PropTypes.number,
-    prevPos: PropTypes.number,
     searchQuery: PropTypes.string,
-    limit: PropTypes.number
 };
 
 export default Results;

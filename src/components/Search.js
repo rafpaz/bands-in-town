@@ -6,19 +6,11 @@ class Search extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            searchQuery: this.props.searchQuery,
-            limit: 20
+            searchQuery: this.props.searchQuery
         };
 
         this.onValueChange = this.onValueChange.bind(this);
         this.handleKeyPress = this.handleKeyPress.bind(this);
-    }
-
-    componentWillReceiveProps(newProps) {
-        let newLimit = newProps.limit ? newProps.limit : 20;
-        this.setState({
-            limit: newLimit
-        });
     }
 
     onValueChange(event) {
@@ -33,7 +25,7 @@ class Search extends Component {
 
     handleKeyPress(target) {
         if(target.charCode === 13){
-            this.props.history.push("/search/" + this.state.searchQuery + "/" + this.state.limit + "/" + 0);   
+            this.props.history.push("/search/" + this.state.searchQuery);   
         }
     }
 
@@ -44,9 +36,9 @@ class Search extends Component {
                     <div className="input-group mb-3 mt-3 col-5">
                         <input type="text"
                                className="form-control"
-                               placeholder="Search for gifs"
-                               aria-label="Search for gifs"
-                               aria-describedby="gif-search"
+                               placeholder="Search for a band"
+                               aria-label="Search for band"
+                               aria-describedby="band-search"
                                id="searchInput"
                                name={"searchQuery"}
                                value={this.state.searchQuery}
@@ -54,7 +46,7 @@ class Search extends Component {
                                onKeyPress={this.handleKeyPress}
                         />
                         <div className="input-group-append">
-                            <Link to={"/search/" + this.state.searchQuery + "/" + this.state.limit + "/" + 0}>
+                            <Link to={"/search/" + this.state.searchQuery}>
                                 <button id={"search-btn"}
                                         className="btn btn-outline-secondary"
                                         type="button"
@@ -63,21 +55,6 @@ class Search extends Component {
                                 </button>
                             </Link>
                         </div>
-                    </div>
-                    <div className="input-group col-3 mt-3">
-                        <div className="input-group-prepend ml-3">
-                            <label className="input-group-text" htmlFor="per-page">Per Page</label>
-                        </div>
-                        <select id="limit-select"
-                                className="custom-select col-3"
-                                value={this.state.limit}
-                                onChange={this.onValueChange}
-                                name={"limit"}
-                        >
-                            <option value="10">10</option>
-                            <option value="20">20</option>
-                            <option value="50">50</option>
-                        </select>
                     </div>
                 </div>
             </div>
