@@ -1,0 +1,64 @@
+html, body{
+  height:100%; /* important to vertically align the container */
+  margin:0;
+  padding:0;
+}
+
+#app {
+  font-family: 'Open Sans', sans-serif;
+
+  #error-page{
+    width: 220px;
+    margin: 10px auto;
+  }
+
+  #logo{
+    font-family: 'Titan One', cursive;
+    width: 230px;
+    margin: 35px auto 10px auto;
+  }
+
+  #search-container{
+    .input-group, button{
+      height: 38px;
+    }
+  }
+
+  .results{
+    li{
+      display: block;
+      margin-bottom: 5px;
+    }
+  }
+
+  #navigation-btns{
+    width: 140px;
+    margin: 0 auto;
+
+    button{
+      margin-right: 15px;
+      height: 35px;
+    }
+  }
+
+  #single-view{
+    img{
+      display: block;
+      margin: 15px auto;
+    }
+
+    button{
+      height: 38px;
+      margin: auto;
+      width: 70px;
+      display: block;
+    }
+
+    .vertical-center {
+      min-height: 100%;  /* Fallback for browsers do NOT support vh unit */
+      min-height: 100vh; /* These two lines are counted as one 🙂       */
+      display: flex;
+      align-items: center;
+    }
+  }
+}
